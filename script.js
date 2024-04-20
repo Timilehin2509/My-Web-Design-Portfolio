@@ -23,6 +23,11 @@ const portfolioData = [
         title: 'Single Price Grid Component',
         imageSrc: './assets/images/portfolio/Single Price Grid Component.png',
         description: 'A call to action for a subscription plan.'
+    },
+    { 
+        title: 'AWS_Startups Header',
+        imageSrc: './assets/images/portfolio/AWS_Startups Header.png',
+        description: 'A basic header section of an event web page.'
     }
 ];
 
