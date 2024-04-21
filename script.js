@@ -12,7 +12,7 @@ const portfolioData = [
     { 
         title: 'Profile Card Component',
         imageSrc: './assets/images/portfolio/Profile card component.png',
-        description: 'A simple social media profile card. dndjdnkdksms mc mkmskmkmskmkmk , , ,m kmmkmkmkmkmkmkm'
+        description: 'A simple social media profile card.'
     },
     { 
         title: 'Product Preview Card Component',
