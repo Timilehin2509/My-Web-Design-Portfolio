@@ -1,15 +1,33 @@
-const navbarToggle = navbar.querySelector('#navbar-toggle');
-let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+document.addEventListener('DOMContentLoaded', () => {
+  const navbar = document.getElementById('navbar');
+  const navbarToggle = navbar.querySelector('#navbar-toggle');
+  const navbarMenu = document.querySelector('#navbar-menu');
+  const navbarLinksContainer = navbarMenu.querySelector('.navbar-links');
+  const navbarHeight = navbar.offsetHeight;
 
-const toggleNavbarVisibility = () => {
-  isNavbarExpanded = !isNavbarExpanded;
-  navbarToggle.setAttribute('aria-expanded', isNavbarExpanded);
-};
+  let isNavbarExpanded = navbarToggle.getAttribute('aria-expanded') === 'true';
+  let lastScrollTop = 0;
 
-navbarToggle.addEventListener('click', toggleNavbarVisibility);
+  const toggleNavbarVisibility = () => {
+      isNavbarExpanded = !isNavbarExpanded;
+      navbarToggle.setAttribute('aria-expanded', isNavbarExpanded);
+  };
 
-const navbarMenu = document.querySelector('#navbar-menu');
-const navbarLinksContainer = navbarMenu.querySelector('.navbar-links');
+  navbarToggle.addEventListener('click', toggleNavbarVisibility);
+  navbarLinksContainer.addEventListener('click', (e) => e.stopPropagation());
+  navbarMenu.addEventListener('click', toggleNavbarVisibility);
 
-navbarLinksContainer.addEventListener('click', (e) => e.stopPropagation());
-navbarMenu.addEventListener('click', toggleNavbarVisibility);
+  window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop) {
+          // Scrolling down
+          navbar.style.opacity = '0';
+      } else {
+          // Scrolling up
+          navbar.style.opacity = '1';
+      }
+
+      lastScrollTop = scrollTop;
+  });
+});
