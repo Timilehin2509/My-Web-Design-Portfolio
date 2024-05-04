@@ -5,6 +5,10 @@
     --navbar-bg-contrast: hsl(197, 62%, 60%);
     --bg-color: hsl(197, 62%, 60%);
     --color: hsl(40, 7%, 16%);
+    --primary-font: 'Inconsolata', 'Consolas', monospace;
+    --secondary-font: 'PT Sans', Arial, sans-serif;
+    --accent-font: 'Nunito', 'Segoe UI', sans-serif;
+
   }
   *, *::before, *::after {
     box-sizing: border-box;
@@ -15,6 +19,9 @@
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    background-color: var(--bg-color);
+    color: var(--color);
+    font-family: var(--primary-font);
   }
   img, picture, video, canvas, svg {
     display: block;
@@ -26,16 +33,19 @@
   p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--secondary-font);
+  }
+
+  a, span {
+    font-family: var(--accent-font);
+  }
+
   #root, #__next {
     isolation: isolate;
   }
   /*-----------------------------------------------------------------------------*/
-  body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--color)
-  }
-
   .container {
     min-width: 80%;
     padding: 0 5%;
@@ -48,6 +58,7 @@
   flex-direction: column;
   }
 
+  
   header, section, footer {
     padding: 5px;
   }
