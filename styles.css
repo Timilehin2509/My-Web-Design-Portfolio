@@ -1,13 +1,20 @@
   :root {
-    --navbar-bg-color: hsl(225, 44%, 31%);
+    --navbar-bg-color: hsl(224, 48%, 21%);
     --navbar-text-color: hsl(0, 0%, 85%);
-    --navbar-text-color-focus: white;
+    --navbar-text-color-focus: hsl(0, 0%, 100%);
     --navbar-bg-contrast: hsl(197, 62%, 60%);
     --bg-color: hsl(197, 62%, 60%);
     --color: hsl(40, 7%, 16%);
+    --alt-bg: hsl(224, 48%, 21%);
+    --alt-text: hsl(0, 0%, 100%);
     --primary-font: 'Inconsolata', 'Consolas', monospace;
     --secondary-font: 'PT Sans', Arial, sans-serif;
     --accent-font: 'Nunito', 'Segoe UI', sans-serif;
+    --large-font: 3rem;
+    --medium-font: 2.25rem;
+    --smaller-font: 1.25rem;
+    --bold: 700;
+    --regular: 400;
 
   }
   *, *::before, *::after {
@@ -24,6 +31,7 @@
     font-family: var(--primary-font);
   }
   img, picture, video, canvas, svg {
+
     display: block;
     max-width: 100%;
   }
@@ -36,6 +44,22 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--secondary-font);
+    padding: 0% 0% 5%;
+  }
+
+  h1 {
+    font-size: var(--large-font);
+    font-weight: var(--bold);
+  }
+
+  h2 {
+    font-size: var(--medium-font);
+    font-weight: var(--bold);
+  }
+
+  h3 {
+    font-size: var(--smaller-font);
+    font-weight: var(--bold);
   }
 
   a, span {
@@ -46,21 +70,22 @@
     isolation: isolate;
   }
   /*-----------------------------------------------------------------------------*/
-  .container {
-    min-width: 80%;
-    padding: 0 5%;
-  }
 
-  .centered {
+  .container {
+    padding: 5%;
+    min-height: 50vh;
+  }
+  
+  .centered{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   }
 
-  
-  header, section, footer {
-    padding: 5px;
+  .alternate {
+    background-color: var(--alt-bg);
+    color: var(--alt-text);
   }
 
   #navbar {
@@ -170,7 +195,7 @@
   }
 
   .navbar-links {
-    list-style: none;
+    list-style: none; 
     position: absolute;
     background-color: var(--navbar-bg-color);
     display: flex;
@@ -187,33 +212,6 @@
     padding: 1em;
   }
   /*--------------------------------------------*/
-  section {
-    padding: 50px 0;
-  }
-
-  section h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  #hero {
-  /*background-color: #333;  Adjust as needed 
-  color: #fff; /* Text color for the hero banner */
-  padding: 100px 0; /* Adjust padding as needed */
-  text-align: center;
-  }
-
-  #hero h1 {
-  font-size: 36px; /* Adjust font size as needed */
-  margin-bottom: 20px;
-  }
-
-  #hero p {
-  font-size: 18px; /* Adjust font size as needed */
-  margin-bottom: 40px;
-  }
-  /*About Section*/
   .about-details {
     text-align: left;
   }
@@ -223,9 +221,9 @@
     height: 300px;
     float: right;
     margin-left: 20px;
-    border: 1px solid #333333;
+    border: 1px solid hsl(0, 0%, 20%);
     border-radius: 50%;
-    box-shadow: 5px 5px 15px 5px  rgb(0, 0, 0, 0.4);
+    /*box-shadow: 5px 5px 15px 5px  rgb(0, 0, 0, 0.4);*/
     
   }
 
@@ -238,8 +236,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 25px;
   }
 
   .portfolio-item {
@@ -248,12 +245,11 @@
     min-width: 300px;
     min-height: 300px;
     box-sizing: border-box;
-    /*background-color: whitesmoke;
-    color: #333;*/
-    border: 3px solid #BCC5C2;
-    border-radius: 20px;
-    padding: 20px; 
-    box-shadow: 5px 5px 10px 5px  rgb(0, 0, 0, 0.5);
+    background-color: hsl(224, 48%, 21%); 
+    color: hsl(0, 0%, 100%);       
+    border-radius: 50px 0px; 
+    padding: 2.5%;
+    /*box-shadow: 5px 5px 10px 5px  rgb(0, 0, 0, 0.5);*/
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -263,23 +259,14 @@
   .portfolio-item img {
     max-width: 100%;
     height:auto;
-    border-radius: 10px;
+    border-radius: 25px 0px;
+    padding-bottom: 2.5%;
   }
-
 
   footer {
-    background: #333;
-    /*color: #fff;*/
-    padding: 20px 0;
+    height: 80px;
+    padding: 2.5%;
     text-align: center;
-  }
-
-  .contact-details {
-    text-align: center;
-  }
-
-  .contact-details p {
-    margin-bottom: 10px;
   }
 
   /*---------------------------------------------------------------*/
